@@ -2,6 +2,7 @@ const tintColorLight = "#2ABB9B"; // the green of the desgins, the const stablis
 // all of them
 
 export default {
+  // different modes, light and dark one.
   light: {
     text: "#000",
     background: "#FDFCF0", // fondo
