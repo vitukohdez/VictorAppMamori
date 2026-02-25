@@ -14,10 +14,9 @@ interface HeaderProps {
 export const Header = ({ name, scans, tickets }: HeaderProps) => {
   return (
     <View style={styles.headerContainer}>
-      {/* LADO IZQUIERDO: Foto y saludo */}
       <View style={styles.userRow}>
         <Image
-          source={{ uri: "https://i.pravatar.cc/150?u=john" }} // Foto de perfil de prueba
+          source={{ uri: "https://i.pravatar.cc/150?u=john" }} 
           style={styles.avatar}
         />
         <View style={styles.userInfo}>
@@ -26,7 +25,6 @@ export const Header = ({ name, scans, tickets }: HeaderProps) => {
         </View>
       </View>
 
-      {/* LADO DERECHO: Tickets */}
       <View style={styles.ticketBox}>
         <View style={styles.ticketCountRow}>
           <Ionicons name="ticket-outline" size={20} color="black" />
