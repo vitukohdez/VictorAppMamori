@@ -1,13 +1,12 @@
-import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { ActionButtons } from "../../components/ActionButtons"; // <-- Importamos
+import { CountdownTimer } from "../../components/CountdownTimer";
 import { Header } from "../../components/Header";
 import Colors from "../../constants/Colors";
 
 export default function TabOneScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <StatusBar style="dark" backgroundColor={Colors.light.background} translucent={false} />
       
       <Header name="John" scans="50+" tickets={124} />
 
@@ -18,6 +17,8 @@ export default function TabOneScreen() {
       </Text>
 
       <ActionButtons />
+
+      <CountdownTimer />
 
     </ScrollView>
   );

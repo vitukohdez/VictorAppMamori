@@ -8,26 +8,41 @@ export const ActionButtons = () => {
   const router = useRouter();
 
   // Plantilla para cada botón individual
-  const ActionButton = ({ icon, title, route, iconColor = 'black' }: any) => (
+    const ActionButton = ({ icon, title, route, iconColor = 'black', circleBg, hasBorder }: any) => (
     <TouchableOpacity 
-      style={styles.buttonCard} 
-      onPress={() => router.push(route)} // Al hacer clic, navega a la ruta
-      activeOpacity={0.7} // Efecto visual al pulsar
-    >
-      <Ionicons name={icon} size={28} color={iconColor} style={styles.icon} />
-      <Text style={styles.buttonText}>{title}</Text>
-    </TouchableOpacity>
+        style={styles.buttonCard} 
+        onPress={() => router.push(route)}
+        activeOpacity={0.7}
+      >
+        {/* El círculo ahora usa los colores que le pasamos */}
+        <View style={[
+          styles.iconCircle, 
+          { backgroundColor: circleBg },
+          hasBorder && styles.circleBorder // Si hasBorder es true, le pone la línea gris
+        ]}>
+          <Ionicons name={icon} size={24} color={iconColor} />
+        </View>
+        
+        <Text style={styles.buttonText}>{title}</Text>
+      </TouchableOpacity>
   );
 
-  return (
+return (
     <View style={styles.container}>
-      {/* Usamos la plantilla 3 veces con datos distintos */}
-      <ActionButton icon="search-outline" title="Find Products" route="/products" />
-      <ActionButton icon="camera-outline" title="Take Photos" route="/photos" />
-      {/* Al de los tickets le pasamos nuestro color verde primario */}
-      <ActionButton icon="ticket-outline" title="Earn Tickets" route="/tickets" iconColor={Colors.primary} />
+    <ActionButton 
+    icon="search-outline" title="Find Products" route="/products" 
+    iconColor="#333" circleBg="#FFF" hasBorder={true} 
+    />
+    <ActionButton 
+    icon="camera-outline" title="Take Photos" route="/photos" 
+    iconColor="#FFF" circleBg="#F6AA4D" hasBorder={false} 
+    />
+    <ActionButton 
+    icon="ticket-outline" title="Earn Tickets" route="/tickets" 
+    iconColor="#FFF" circleBg={Colors.primary} hasBorder={false} 
+    />
     </View>
-  );
+    );
 };
 
 const styles = StyleSheet.create({
@@ -58,5 +73,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#333',
+  },
+  iconCircle: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  circleBorder: {
+    borderWidth: 1,
+    borderColor: '#E0E0E0',
   },
 });
