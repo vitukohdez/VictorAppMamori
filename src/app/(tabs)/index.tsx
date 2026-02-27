@@ -1,5 +1,5 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { ActionButtons } from "../../components/ActionButtons"; // <-- Importamos
+import { ActionButtons } from "../../components/ActionButtons";
 import { CountdownTimer } from "../../components/CountdownTimer";
 import { Header } from "../../components/Header";
 import Colors from "../../constants/Colors";
@@ -24,16 +24,15 @@ export default function TabOneScreen() {
   );
 }
 
-// ... (tus estilos se quedan igual)
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.light.background, // El color cremita que configuramos
+    backgroundColor: Colors.light.background, 
   },
   content: {
-    paddingHorizontal: 20, // Espacio a los lados
-    paddingTop: 20, // Espacio arriba para que no lo tape la barra de la batería/hora del móvil
+    paddingHorizontal: 20, 
+    paddingTop: 20, 
     paddingBottom: 40,
   },
   separator: {

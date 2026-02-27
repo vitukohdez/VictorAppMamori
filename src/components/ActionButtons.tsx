@@ -8,17 +8,16 @@ export const ActionButtons = () => {
   const router = useRouter();
 
   // Plantilla para cada botón individual
-    const ActionButton = ({ icon, title, route, iconColor = 'black', circleBg, hasBorder }: any) => (
+    const ActionButton = ({ icon, title, route, iconColor, circleBg, hasBorder }: any) => (
     <TouchableOpacity 
         style={styles.buttonCard} 
         onPress={() => router.push(route)}
         activeOpacity={0.7}
       >
-        {/* El círculo ahora usa los colores que le pasamos */}
         <View style={[
           styles.iconCircle, 
           { backgroundColor: circleBg },
-          hasBorder && styles.circleBorder // Si hasBorder es true, le pone la línea gris
+          hasBorder && styles.circleBorder 
         ]}>
           <Ionicons name={icon} size={24} color={iconColor} />
         </View>
@@ -53,17 +52,16 @@ const styles = StyleSheet.create({
   },
   buttonCard: {
     backgroundColor: '#FFFFFF',
-    width: '31%', // 31% para que quepan 3 dejando un pequeño hueco
+    width: '31%', 
     paddingVertical: 18,
     paddingHorizontal: 5,
     borderRadius: 15,
     alignItems: 'center',
-    // Sombras para que parezca que "flota" como en tu diseño
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 5,
-    elevation: 2, // Sombra en Android
+    elevation: 2, 
   },
   icon: {
     marginBottom: 8,
