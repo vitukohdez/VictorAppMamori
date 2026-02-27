@@ -5,7 +5,7 @@ export default {
   // different modes, light and dark one.
   light: {
     text: "#000",
-    background: "#FDFCF0", // fondo
+    background: "#F8F7F2", // fondo
     tint: tintColorLight, // tint
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorLight,

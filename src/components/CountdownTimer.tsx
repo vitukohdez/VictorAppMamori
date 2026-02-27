@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   container: {
     borderRadius: 15,
     padding: 15,
-    marginBottom: 25,
+    marginBottom: 15,
   },
   wrapper: {
     flexDirection: 'row',
