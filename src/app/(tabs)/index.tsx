@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { ActionButtons } from "../../components/ActionButtons";
 import { CountdownTimer } from "../../components/CountdownTimer";
 import { Header } from "../../components/Header";
+import { Prizes } from "../../components/Prizes";
 import { Statistics } from "../../components/Statistics";
 import Colors from "../../constants/Colors";
 
@@ -22,6 +23,8 @@ export default function TabOneScreen() {
       <CountdownTimer />
 
       <Statistics />
+
+      <Prizes />
 
     </ScrollView>
   );
