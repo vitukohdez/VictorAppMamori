@@ -1,8 +1,8 @@
 // components/Header.tsx
-import { Ionicons } from "@expo/vector-icons"; // Para el icono del ticket
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import Colors from "../constants/Colors"; // Importamos nuestros colores
+import Colors from "../constants/Colors";
 
 // Definimos qué "datos" (props) va a recibir esta pieza
 interface HeaderProps {
@@ -36,21 +36,21 @@ export const Header = ({ name, scans, tickets }: HeaderProps) => {
   );
 };
 
-// Aquí le damos el diseño exacto de tu imagen (márgenes, tamaños, colores)
+
 const styles = StyleSheet.create({
   headerContainer: {
-    flexDirection: "row", // Coloca los elementos en fila (izquierda y derecha)
-    justifyContent: "space-between", // Separa los dos bloques al máximo
-    alignItems: "center", // Los centra verticalmente
-    marginBottom: 25, // Deja espacio por debajo para el siguiente elemento
+    flexDirection: "row", 
+    justifyContent: "space-between", 
+    alignItems: "center", 
+    marginBottom: 25, 
   },
   userRow: { flexDirection: "row", alignItems: "center" },
-  avatar: { width: 50, height: 50, borderRadius: 25 }, // borderRadius 25 hace que sea un círculo perfecto
+  avatar: { width: 50, height: 50, borderRadius: 25 }, 
   userInfo: { marginLeft: 12 },
   greeting: { fontSize: 22, fontWeight: "bold" },
-  scansText: { fontSize: 14, color: "#666" }, // Gris oscuro
-  ticketBox: { alignItems: "flex-end" }, // Alinea el texto a la derecha
+  scansText: { fontSize: 14, color: "#666" }, 
+  ticketBox: { alignItems: "flex-end" }, 
   ticketCountRow: { flexDirection: "row", alignItems: "center" },
   ticketNumber: { fontSize: 22, fontWeight: "bold", marginLeft: 5 },
-  viewEntries: { fontSize: 12, color: Colors.secondary, fontWeight: "bold" }, // Usa el naranja de nuestros Colors.ts
+  viewEntries: { fontSize: 12, color: Colors.secondary, fontWeight: "bold" }, 
 });

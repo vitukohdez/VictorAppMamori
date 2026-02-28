@@ -122,9 +122,9 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 2,
   },
-  dateDay: { fontSize: 28, fontWeight: '900', color: '#333' },
+  dateDay: { fontSize: 40, fontWeight: '900', color: '#333' },
   dateMonth: { fontSize: 12, fontWeight: 'bold', color: '#333', marginTop: -2 },
-  dateTime: { fontSize: 16, fontWeight: 'bold', color: '#555', marginTop: 2 },
+  dateTime: { fontSize: 20, fontWeight: 'bold', color: '#555', marginTop: 2 },
   timerSection: {
     flex: 1,
     marginLeft: 15,
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   },
   numberText: {
     color: '#000',
-    fontSize: 24,
+    fontSize: 35,
     fontWeight: '900',
   },
   labelText: {
@@ -162,6 +162,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '900',
     marginHorizontal: 2,
-    marginTop: -2, 
+    marginTop: 8, 
   }
 });

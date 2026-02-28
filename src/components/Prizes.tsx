@@ -3,18 +3,18 @@ import { Image, ImageSourcePropType, StyleSheet, Text, TouchableOpacity, View } 
 
 export const Prizes = () => {
   
-  const PrizeCard = ({ medalSource, logoSource, voucherValue, voucherColor, isTopPrize = false }: { medalSource: ImageSourcePropType, logoSource: ImageSourcePropType, voucherValue: string, voucherColor: string, isTopPrize?: boolean }) => (
+  const PrizeCard = ({ medalSource, logoSource, voucherValue, voucherColor }: { medalSource: ImageSourcePropType, logoSource: ImageSourcePropType, voucherValue: string, voucherColor: string }) => (
     <View style={styles.prizeCard}>
       
-      {/* 1. MEDALLA CENTRADA: Usamos alignSelf: 'center' para que quede perfecta */}
+      {/* 1. MEDALLA CENTRADA */}
       <Image source={medalSource} style={styles.medalIconAbsolute} resizeMode="contain" />
       
-      {/* 2. MITAD SUPERIOR (Logo): Altura fija de 75px */}
+      {/* 2. MITAD SUPERIOR (Logo) */}
       <View style={styles.logoContainer}>
         <Image source={logoSource} style={styles.supermarketLogo} resizeMode="contain" />
       </View>
       
-      {/* 3. MITAD INFERIOR (Voucher): Altura fija de 75px para hacer el 50/50 exacto */}
+      {/* 3. MITAD INFERIOR (Voucher) */}
       <View style={[styles.voucherContainer, { backgroundColor: voucherColor }]}>
         <Text style={styles.voucherValueText}>{voucherValue}</Text>
         <Text style={styles.voucherTitleText}>VOUCHER</Text>
@@ -27,23 +27,22 @@ export const Prizes = () => {
       
       <View style={styles.vouchersRow}>
         <PrizeCard 
-          medalSource={require('../assets/medal-1.png')} 
+          medalSource={require('../assets/medal-3.png')} 
           logoSource={require('../assets/logo-welbees.png')} 
           voucherValue="€1,000" 
           voucherColor="#2FCB9D" 
-          isTopPrize={true}
         />
         <PrizeCard 
           medalSource={require('../assets/medal-2.png')}
           logoSource={require('../assets/logo-greens.png')} 
           voucherValue="€100" 
-          voucherColor="#4A4A4A" // Ajustado al gris un poco más oscuro de la imagen
+          voucherColor="#4A4A4A" 
         />
         <PrizeCard 
-          medalSource={require('../assets/medal-3.png')}
+          medalSource={require('../assets/medal-1.png')}
           logoSource={require('../assets/logo-pama-pavi.png')} 
           voucherValue="€50" 
-          voucherColor="#F06E4B" // Ajustado al naranja exacto
+          voucherColor="#F06E4B" 
         />
       </View>
 
@@ -74,13 +73,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     zIndex: 0,
-    marginTop: 15, // Espacio para las medallas
+    marginTop: 15, 
     marginBottom: 15,
   },
   prizeCard: {
     backgroundColor: '#FFFFFF',
     width: '31%',
-    borderRadius: 15, // Redondea la tarjeta principal
+    borderRadius: 15, 
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
@@ -89,19 +88,19 @@ const styles = StyleSheet.create({
     position: 'relative', 
   },
   medalIconAbsolute: {
-    width: 38, // Un pelín más grandes para que destaquen
+    width: 38, 
     height: 38,
     position: 'absolute', 
     top: -18, 
-    alignSelf: 'center', // <-- LA MAGIA PARA CENTRARLAS
+    alignSelf: 'center', 
     zIndex: 1, 
   },
   logoContainer: {
-    height: 75, // Altura exacta para la mitad superior
+    height: 75,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 8,
-    borderTopLeftRadius: 15, // Redondeamos arriba
+    borderTopLeftRadius: 15, 
     borderTopRightRadius: 15,
   },
   supermarketLogo: {
@@ -109,26 +108,25 @@ const styles = StyleSheet.create({
     height: '115%',
   },
   voucherContainer: {
-    height: 65, // Altura exacta para la mitad inferior (50/50)
+    height: 65, 
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottomLeftRadius: 15, // Redondeamos la caja de color por abajo
+    borderBottomLeftRadius: 15, 
     borderBottomRightRadius: 15,
   },
   voucherValueText: {
     color: '#FFFFFF',
-    fontSize: 30, // <-- Precio mucho más grande
+    fontSize: 30, 
     fontWeight: '900',
   },
   voucherTitleText: {
     color: '#FFFFFF',
-    fontSize: 10, // <-- VOUCHER más pequeño
+    fontSize: 10, 
     fontWeight: '700',
     marginTop: 0,
-    letterSpacing: 0.5, // Un poco de espacio entre letras para que se lea mejor en mayúsculas
+    letterSpacing: 0.5, 
   },
   
-  // --- Resto de estilos inferiores ---
   scanButton: {
     backgroundColor: '#3FB492',
     borderRadius: 25,
