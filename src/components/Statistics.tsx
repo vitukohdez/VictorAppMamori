@@ -13,7 +13,6 @@ export const Statistics = () => {
       
       <Text style={styles.title}>{title}</Text>
       
-      {/* --- NUEVO: El texto naranja de abajo --- */}
       <Text style={styles.bottomText}>{bottomText}</Text>
     
     </View>
@@ -21,13 +20,12 @@ export const Statistics = () => {
 
   return (
     <View style={styles.container}>
-      {/* Pasamos los datos exactos y colores para cada cajita */}
       
       {/* Box 1: Número '6' en verde/turquesa y texto 'View Scans' */}
       <StatBox 
         title="Scans Today" 
         value="6" 
-        valueColor="#3FB492" // Color verde/turquesa
+        valueColor="#3FB492" 
         bottomText="View Scans" 
       />
       
@@ -60,7 +58,6 @@ const styles = StyleSheet.create({
   box: {
     backgroundColor: '#FFFFFF',
     width: '31%',
-    // Reducimos un pelín el padding vertical para que quepa todo el texto nuevo
     paddingVertical: 12, 
     paddingHorizontal: 5,
     borderRadius: 15,
@@ -78,7 +75,7 @@ const styles = StyleSheet.create({
     marginBottom: 2, // Menos espacio con el título
   },
   title: {
-    fontSize: 11,
+    fontSize: 13,
     // Ponemos el título en gris claro
     color: '#888', 
     fontWeight: '500',
@@ -87,7 +84,7 @@ const styles = StyleSheet.create({
   },
   // --- ESTILOS PARA EL NUEVO TEXTO NARANJA ---
   bottomText: {
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: '500',
     // Usamos el color naranja específico de tu diseño
     color: '#E06C42', 

@@ -14,7 +14,7 @@ const TabIcon = ({ name, color, focused }: { name: any, color: string, focused: 
 export default function TabLayout() {
   return (
     <Tabs
-      initialRouteName="scan" // <-- ESTA ES LA CLAVE: Forza a que arranque en "Scan & Win"
+      initialRouteName="scan" //  Forza a que arranque en "Scan & Win"
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: '#3FB492', 
@@ -53,7 +53,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => <TabIcon name="list-outline" color={color} focused={focused} />,
         }}
       />
-      {/* PESTAÑA SCAN & WIN (La que se verá activa por defecto) */}
+      
       <Tabs.Screen
         name="scan"
         options={{

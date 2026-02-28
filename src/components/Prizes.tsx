@@ -67,7 +67,7 @@ export const Prizes = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 10,
+    marginBottom: -30,
   },
   vouchersRow: {
     flexDirection: 'row',
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   },
   scanButtonText: {
     color: '#FFFFFF',
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '700',
   },
   registrationSection: {
@@ -149,13 +149,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   knowAnyoneText: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '700',
     color: '#333333',
     marginBottom: 2,
   },
   registrationBenefitText: {
-    fontSize: 11,
+    fontSize: 12,
     color: '#888888',
     textAlign: 'center',
     fontWeight: '500',
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   },
   shareButtonText: {
     color: '#3FB492',
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: '600',
   },
 });

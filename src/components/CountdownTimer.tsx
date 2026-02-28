@@ -13,7 +13,7 @@ export const CountdownTimer = () => {
   useEffect(() => {
     let intervalo: ReturnType<typeof setInterval>;
 
-    fetch('https://victorapp.free.beeceptor.com/next-draw') 
+    fetch('https://victorapp2.free.beeceptor.com/next-draw') 
       .then(respuesta => respuesta.json())
       .then(datos => {
         const fechaSorteo = new Date(datos.drawDate).getTime();
@@ -66,6 +66,7 @@ export const CountdownTimer = () => {
         </View>
 
         <View style={styles.timerSection}>
+          <View style={styles.timerBlock}>
           <Text style={styles.title}>Next Draw</Text>
           
           <View style={styles.customCountdown}>
@@ -77,6 +78,7 @@ export const CountdownTimer = () => {
             <Text style={styles.colon}>:</Text>
             <TimeNumber valor={timeLeft.seconds} etiqueta="Seconds" />
           </View>
+        </View>
 
           {/* <CountDown
             until={secondsLeft} 
@@ -122,13 +124,16 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 2,
   },
-  dateDay: { fontSize: 40, fontWeight: '900', color: '#333' },
-  dateMonth: { fontSize: 12, fontWeight: 'bold', color: '#333', marginTop: -2 },
-  dateTime: { fontSize: 20, fontWeight: 'bold', color: '#555', marginTop: 2 },
+  dateDay: { fontSize: 40, fontWeight: '900', color: '#333', marginTop: -7 },
+  dateMonth: { fontSize: 12, fontWeight: 'bold', color: '#333', marginTop: -7 },
+  dateTime: { fontSize: 20, fontWeight: 'bold', color: '#555', marginTop: -5 },
   timerSection: {
     flex: 1,
     marginLeft: 15,
     alignItems: 'center',
+  },
+  timerBlock: {
+    alignItems: 'flex-start',
   },
   title: {
     fontSize: 16,
@@ -136,7 +141,7 @@ const styles = StyleSheet.create({
     color: '#000',
     marginBottom: 2,
     alignSelf: 'flex-start',
-    marginLeft: '10%',
+    marginLeft: 7,
   },
   customCountdown: {
     flexDirection: 'row',
@@ -144,7 +149,7 @@ const styles = StyleSheet.create({
   },
   timeUnit: {
     alignItems: 'center',
-    marginHorizontal: 2,
+    marginHorizontal: 4,
   },
   numberText: {
     color: '#000',
